@@ -22,9 +22,14 @@ const f = async () => {
   document.getElementById('request-result').innerText = requestResult;
   document.getElementById('has-result-2').innerText = hasResult2;
 
-  const getStorageResult = localStorage.getItem(STORAGE_KEY);
-
+  let getStorageResult = '';
   let setStorageResult = '';
+
+  try {
+    getStorageResult = localStorage.getItem(STORAGE_KEY);
+  } catch (error) {
+    getStorageResult = `[exception] ${error ? error.toString() : ''}`;
+  };
 
   try {
     setStorageResult = localStorage.setItem(STORAGE_KEY, STORAGE_KEY);
