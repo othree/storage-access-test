@@ -1,4 +1,17 @@
 
+const l = async () => {
+  if (!document.hasStorageAccess) {
+    alert('Storage Access API not available!');
+    return;
+  }
+
+  const hasResult = await document.hasStorageAccess();
+
+  document.getElementById('has-result-1').innerText = hasResult;
+};
+
+l();
+
 const f = async () => {
   if (!document.requestStorageAccess) {
     alert('Storage Access API not available!');
@@ -6,8 +19,6 @@ const f = async () => {
   }
 
   let requestResult = '';
-
-  const hasResult = await document.hasStorageAccess();
 
   try {
     requestResult = await document.requestStorageAccess();
@@ -17,8 +28,6 @@ const f = async () => {
 
   const hasResult2 = await document.hasStorageAccess();
 
-
-  document.getElementById('has-result-1').innerText = hasResult;
   document.getElementById('request-result').innerText = requestResult;
   document.getElementById('has-result-2').innerText = hasResult2;
 
