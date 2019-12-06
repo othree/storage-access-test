@@ -25,7 +25,7 @@ const s = async () => {
   document.getElementById("set-storage-result").innerText = setStorageResult;
 };
 
-const f = async () => {
+const g = async () => {
   if (!document.requestStorageAccess) {
     alert("Storage Access API not available!");
     return;
@@ -35,13 +35,23 @@ const f = async () => {
 
   try {
     requestResult = await document.requestStorageAccess();
+    alert("Grant access!");
   } catch (error) {
     requestResult = `[rejected] ${error ? error.toString() : ""}`;
+    alert("Failed grant access!");
+  }
+
+  document.getElementById("request-result").innerText = requestResult;
+};
+
+const r = async () => {
+  if (!document.requestStorageAccess) {
+    alert("Storage Access API not available!");
+    return;
   }
 
   const hasResult2 = await document.hasStorageAccess();
 
-  document.getElementById("request-result").innerText = requestResult;
   document.getElementById("has-result-2").innerText = hasResult2;
 
   let getStorageResult = "";
@@ -59,12 +69,17 @@ const f = async () => {
   document.getElementById("get-cookie-result").innerText = cookieResult;
 };
 
-const run = document.getElementById("run");
+const grant = document.getElementById("grant");
+const read = document.getElementById("read");
 const save = document.getElementById("save");
 const clean = document.getElementById("clean");
 
-if (run) {
-  run.addEventListener("click", f, false);
+if (grant) {
+  grant.addEventListener("click", g, false);
+}
+
+if (read) {
+  read.addEventListener("click", r, false);
 }
 
 if (save) {
