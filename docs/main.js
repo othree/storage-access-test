@@ -47,9 +47,12 @@ const f = async () => {
   Cookies.set(COOKIE_KEY, COOKIE_KEY, { expires: 7 });
 };
 
-f();
-
+const run = document.getElementById('run');
 const clean = document.getElementById('clean');
+
+if (run) {
+  run.addEventListener('click', f, false);
+}
 
 if (clean) {
   clean.addEventListener('click', () => {
