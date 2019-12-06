@@ -12,7 +12,11 @@ const l = async () => {
 l();
 
 const s = async () => {
-  Cookies.set(COOKIE_KEY, COOKIE_KEY, { expires: 7 });
+  Cookies.set(COOKIE_KEY, COOKIE_KEY, {
+    expires: 365,
+    path: "",
+    domain: "othree.github.io"
+  });
 
   let setStorageResult = "";
 
