@@ -14,7 +14,7 @@ l();
 const s = async () => {
   Cookies.set(COOKIE_KEY, COOKIE_KEY, {
     expires: 365,
-    path: "",
+    path: "/",
     domain: document.location.host,
     secure: true
   });
@@ -96,7 +96,7 @@ if (clean) {
     "click",
     () => {
       localStorage.removeItem(STORAGE_KEY);
-      Cookies.remove(COOKIE_KEY, { path: "" });
+      Cookies.remove(COOKIE_KEY, { path: "/" });
     },
     false
   );
