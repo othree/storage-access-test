@@ -96,7 +96,7 @@ if (clean) {
     "click",
     () => {
       localStorage.removeItem(STORAGE_KEY);
-      Cookies.remove(COOKIE_KEY);
+      Cookies.remove(COOKIE_KEY, { path: "" });
     },
     false
   );
