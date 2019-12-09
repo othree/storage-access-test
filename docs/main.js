@@ -15,7 +15,8 @@ const s = async () => {
   Cookies.set(COOKIE_KEY, COOKIE_KEY, {
     expires: 365,
     path: "",
-    domain: "othree.github.io"
+    domain: document.location.host,
+    secure: true
   });
 
   let setStorageResult = "";
