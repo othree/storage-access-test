@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: https://othree.github.io');
-header('Access-Control-Allow-Credential: true');
+header('Access-Control-Allow-Credentials: true');
 setcookie("4-2-plus-http-cookie", "4-2-plus-http-cookie", time() + 3600 * 24);
 ?>
 <!DOCTYPE html>
