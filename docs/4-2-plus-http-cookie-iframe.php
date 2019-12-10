@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 setcookie("4-2-plus-http-cookie", "4-2-plus-http-cookie", time() + 3600 * 24);
 ?>
 <!DOCTYPE html>
