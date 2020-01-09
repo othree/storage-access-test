@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+</head>
+<body>
+  Cookie
+  <div id="text"></div>
+
+  <script>
+    
+    var v = parseInt(Cookies.get('name'), 10) || 0;
+    
+    document.getElementById('text').innerHTML = v;
+    
+    Cookies.set('name', v + 1, { expires: 7 })
+    
+    
+  </script>
+</body>
+</html>
